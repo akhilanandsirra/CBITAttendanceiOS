@@ -13,6 +13,8 @@ let gradStop=Color(red: 35.0/255, green: 167.0/255, blue: 216.0/255)
 
 struct ContentView: View {
     
+    @State private var showingAlert = false
+    
     @State var username: String=""
     @State var password: String=""
     
@@ -24,28 +26,17 @@ struct ContentView: View {
                 user()
                 CBITStudentLogin()
                 VStack(){
-                    TextField("Username", text: $username)
-                        .padding(15)
-                        .keyboardType(.numberPad)
-                        .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color.white, lineWidth: 1))
-                        .font(.custom("RobotoCondensed-Regular", size: 18))
-                        .padding(.bottom,20)
-                        .foregroundColor(Color.white)
-                    SecureField("Password", text: $password)
-                    .padding(15)
-                    .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color.white, lineWidth: 1))
-                    .font(.custom("RobotoCondensed-Regular", size: 18))
-                    .padding(.bottom,20)
-                    .foregroundColor(Color.white)
+                    usernameTextfield(username: $username)
+                    passwordTextField(password: $password)
                     Button(action: {
-                        print("login")
+                        if self.username=="" || self.password==""{
+                            self.showingAlert = true
+                        }
                     }) {
-                        Text("Login")
-                            .padding(.vertical, 8)
-                            .padding(.horizontal, 40)
-                        .foregroundColor(.white)
-                        .font(.custom("RobotoCondensed-Regular", size: 20))
-                        .overlay(RoundedRectangle(cornerRadius: 100).stroke(Color.white, lineWidth: 1))
+                        login()
+                    }
+                    .alert(isPresented: $showingAlert) {
+                               Alert(title: Text("Login Failed"), message: Text("Username or Password is invalid."), dismissButton: .default(Text("Try again")))
                     }
                 }
             }
@@ -64,7 +55,7 @@ struct ContentView_Previews: PreviewProvider {
 struct CBITStudentLogin: View {
     var body: some View {
         Text("CBIT Student Login")
-            .font(.custom("RobotoCondensed-Regular", size: 40))
+            .font(.custom("RobotoCondensed-Regular", size: 36))
             .fontWeight(.semibold)
             .foregroundColor(Color.white)
             .padding(.bottom, 20)
@@ -76,7 +67,47 @@ struct user: View {
         Image("user")
             .resizable()
             .aspectRatio(contentMode: .fill)
-            .frame(width: 75, height: 75)
+            .frame(width: 60.0, height: 60.0)
             .padding([.leading, .bottom], 10)
+    }
+}
+
+struct login: View {
+    var body: some View {
+        Text("Login")
+            .padding(.vertical, 8)
+            .padding(.horizontal, 50)
+            .foregroundColor(.white)
+            .font(.custom("RobotoCondensed-Regular", size: 16))
+            .overlay(RoundedRectangle(cornerRadius: 40).stroke(Color.white, lineWidth: 1))
+    }
+}
+
+struct usernameTextfield: View {
+    
+    @Binding var username:String
+    
+    var body: some View {
+        TextField("Username", text: $username)
+            .padding(15)
+            .keyboardType(.numberPad)
+            .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color.white, lineWidth: 1))
+            .font(.custom("RobotoCondensed-Regular", size: 18))
+            .padding(.bottom,20)
+            .foregroundColor(Color.white)
+    }
+}
+
+struct passwordTextField: View {
+    
+    @Binding var password:String
+    
+    var body: some View {
+        SecureField("Password", text: $password)
+            .padding(15)
+            .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color.white, lineWidth: 1))
+            .font(.custom("RobotoCondensed-Regular", size: 18))
+            .padding(.bottom,40)
+            .foregroundColor(Color.white)
     }
 }
