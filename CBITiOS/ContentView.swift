@@ -7,17 +7,27 @@
 //
 
 import SwiftUI
+
 let gradStart=Color(red: 25.0/255, green: 170.0/255, blue: 179.0/255)
 let gradStop=Color(red: 35.0/255, green: 167.0/255, blue: 216.0/255)
+
 struct ContentView: View {
+    
+    @State var username: String=""
+    @State var password: String=""
+    
     var body: some View {
         ZStack{
             LinearGradient(gradient: Gradient(colors: [gradStart, gradStop]), startPoint: .leading, endPoint: .trailing)
                 .edgesIgnoringSafeArea(.all)
-            VStack{
+            VStack(alignment: .leading){
                 user()
                 CBITStudentLogin()
+                TextField("Username", text: $username)
+                .padding(.bottom,20)
+                .background(Color.white)
             }
+        .padding()
         }
     }
     
@@ -32,7 +42,7 @@ struct ContentView_Previews: PreviewProvider {
 struct CBITStudentLogin: View {
     var body: some View {
         Text("CBIT Student Login")
-            .font(.largeTitle)
+            .font(.custom("RobotoCondensed-Regular", size: 40))
             .fontWeight(.semibold)
             .foregroundColor(Color.white)
             .padding(.bottom, 20)
@@ -45,6 +55,6 @@ struct user: View {
             .resizable()
             .aspectRatio(contentMode: .fill)
             .frame(width: 75, height: 75)
-            .padding(.bottom, 0)
+            .padding([.leading, .bottom], 10)
     }
 }
