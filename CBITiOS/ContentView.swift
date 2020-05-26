@@ -23,20 +23,31 @@ struct ContentView: View {
             VStack(alignment: .leading){
                 user()
                 CBITStudentLogin()
-                TextField("Username", text: $username)
+                VStack(){
+                    TextField("Username", text: $username)
+                        .padding(15)
+                        .keyboardType(.numberPad)
+                        .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color.white, lineWidth: 1))
+                        .font(.custom("RobotoCondensed-Regular", size: 18))
+                        .padding(.bottom,20)
+                        .foregroundColor(Color.white)
+                    SecureField("Password", text: $password)
                     .padding(15)
-                    .keyboardType(.numberPad)
                     .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color.white, lineWidth: 1))
                     .font(.custom("RobotoCondensed-Regular", size: 18))
                     .padding(.bottom,20)
                     .foregroundColor(Color.white)
-                SecureField("Password", text: $password)
-                .padding(15)
-                .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color.white, lineWidth: 1))
-                .font(.custom("RobotoCondensed-Regular", size: 18))
-                .padding(.bottom,20)
-                 
-                    
+                    Button(action: {
+                        print("login")
+                    }) {
+                        Text("Login")
+                            .padding(.vertical, 8)
+                            .padding(.horizontal, 40)
+                        .foregroundColor(.white)
+                        .font(.custom("RobotoCondensed-Regular", size: 20))
+                        .overlay(RoundedRectangle(cornerRadius: 100).stroke(Color.white, lineWidth: 1))
+                    }
+                }
             }
         .padding(20)
         }
