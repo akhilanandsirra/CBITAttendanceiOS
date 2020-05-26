@@ -15,8 +15,8 @@ struct ContentView: View {
     
     @State private var showingAlert = false
     
-    @State var username: String=""
-    @State var password: String=""
+    @State var username: String = ""
+    @State var password: String = ""
     
     var body: some View {
         ZStack{
