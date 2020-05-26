@@ -12,7 +12,6 @@
 		E9C5D4BB247D1C9500CA6B33 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C5D4BA247D1C9500CA6B33 /* ContentView.swift */; };
 		E9C5D4BD247D1C9800CA6B33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9C5D4BC247D1C9800CA6B33 /* Assets.xcassets */; };
 		E9C5D4C0247D1C9800CA6B33 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9C5D4BF247D1C9800CA6B33 /* Preview Assets.xcassets */; };
-		E9C5D4C3247D1C9800CA6B33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9C5D4C1247D1C9800CA6B33 /* LaunchScreen.storyboard */; };
 		E9C5D4CE247D1C9800CA6B33 /* CBITiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C5D4CD247D1C9800CA6B33 /* CBITiOSTests.swift */; };
 		E9C5D4D9247D1C9800CA6B33 /* CBITiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C5D4D8247D1C9800CA6B33 /* CBITiOSUITests.swift */; };
 		E9C5D4F9247D305800CA6B33 /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9C5D4F8247D305800CA6B33 /* RobotoCondensed-Bold.ttf */; };
@@ -21,6 +20,7 @@
 		E9C5D501247D307900CA6B33 /* RobotoCondensed-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9C5D4FC247D307900CA6B33 /* RobotoCondensed-Italic.ttf */; };
 		E9C5D502247D307900CA6B33 /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9C5D4FD247D307900CA6B33 /* RobotoCondensed-Light.ttf */; };
 		E9C5D503247D307900CA6B33 /* RobotoCondensed-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9C5D4FE247D307900CA6B33 /* RobotoCondensed-BoldItalic.ttf */; };
+		E9C5D505247D9DB900CA6B33 /* WaitingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C5D504247D9DB900CA6B33 /* WaitingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,6 @@
 		E9C5D4BA247D1C9500CA6B33 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E9C5D4BC247D1C9800CA6B33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9C5D4BF247D1C9800CA6B33 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		E9C5D4C2247D1C9800CA6B33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9C5D4C4247D1C9800CA6B33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9C5D4C9247D1C9800CA6B33 /* CBITiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CBITiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C5D4CD247D1C9800CA6B33 /* CBITiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBITiOSTests.swift; sourceTree = "<group>"; };
@@ -61,6 +60,7 @@
 		E9C5D4FC247D307900CA6B33 /* RobotoCondensed-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RobotoCondensed-Italic.ttf"; path = "../../../../Downloads/Roboto_Condensed/RobotoCondensed-Italic.ttf"; sourceTree = "<group>"; };
 		E9C5D4FD247D307900CA6B33 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RobotoCondensed-Light.ttf"; path = "../../../../Downloads/Roboto_Condensed/RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
 		E9C5D4FE247D307900CA6B33 /* RobotoCondensed-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RobotoCondensed-BoldItalic.ttf"; path = "../../../../Downloads/Roboto_Condensed/RobotoCondensed-BoldItalic.ttf"; sourceTree = "<group>"; };
+		E9C5D504247D9DB900CA6B33 /* WaitingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,9 +116,9 @@
 				E9C5D4B8247D1C9500CA6B33 /* SceneDelegate.swift */,
 				E9C5D4BA247D1C9500CA6B33 /* ContentView.swift */,
 				E9C5D4BC247D1C9800CA6B33 /* Assets.xcassets */,
-				E9C5D4C1247D1C9800CA6B33 /* LaunchScreen.storyboard */,
 				E9C5D4C4247D1C9800CA6B33 /* Info.plist */,
 				E9C5D4BE247D1C9800CA6B33 /* Preview Content */,
+				E9C5D504247D9DB900CA6B33 /* WaitingView.swift */,
 			);
 			path = CBITiOS;
 			sourceTree = "<group>";
@@ -267,7 +267,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9C5D500247D307900CA6B33 /* RobotoCondensed-Regular.ttf in Resources */,
-				E9C5D4C3247D1C9800CA6B33 /* LaunchScreen.storyboard in Resources */,
 				E9C5D503247D307900CA6B33 /* RobotoCondensed-BoldItalic.ttf in Resources */,
 				E9C5D502247D307900CA6B33 /* RobotoCondensed-Light.ttf in Resources */,
 				E9C5D4C0247D1C9800CA6B33 /* Preview Assets.xcassets in Resources */,
@@ -301,6 +300,7 @@
 			files = (
 				E9C5D4B7247D1C9500CA6B33 /* AppDelegate.swift in Sources */,
 				E9C5D4B9247D1C9500CA6B33 /* SceneDelegate.swift in Sources */,
+				E9C5D505247D9DB900CA6B33 /* WaitingView.swift in Sources */,
 				E9C5D4BB247D1C9500CA6B33 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,17 +335,6 @@
 			targetProxy = E9C5D4D5247D1C9800CA6B33 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		E9C5D4C1247D1C9800CA6B33 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E9C5D4C2247D1C9800CA6B33 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E9C5D4DB247D1C9800CA6B33 /* Debug */ = {

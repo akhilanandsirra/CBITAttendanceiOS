@@ -19,28 +19,33 @@ struct ContentView: View {
     @State var password: String = ""
     
     var body: some View {
-        ZStack{
-            LinearGradient(gradient: Gradient(colors: [gradStart, gradStop]), startPoint: .leading, endPoint: .trailing)
-                .edgesIgnoringSafeArea(.all)
-            VStack(alignment: .leading){
-                user()
-                CBITStudentLogin()
-                VStack(){
-                    usernameTextfield(username: $username)
-                    passwordTextField(password: $password)
-                    Button(action: {
-                        if self.username=="" || self.password==""{
-                            self.showingAlert = true
+        NavigationView{
+            ZStack{
+                LinearGradient(gradient: Gradient(colors: [gradStart, gradStop]), startPoint: .leading, endPoint: .trailing)
+                    .edgesIgnoringSafeArea(.all)
+                VStack(alignment: .leading){
+                    user()
+                    CBITStudentLogin()
+                    VStack(){
+                        usernameTextfield(username: $username)
+                        passwordTextField(password: $password)
+                        NavigationLink(destination: WaitingView()) {
+                            login()
                         }
-                    }) {
-                        login()
-                    }
-                    .alert(isPresented: $showingAlert) {
-                               Alert(title: Text("Login Failed"), message: Text("Username or Password is invalid."), dismissButton: .default(Text("Try again")))
+                        /*Button(action: {
+                            if self.username=="" || self.password==""{
+                                self.showingAlert = false
+                            }
+                        }) {
+                            login()
+                        }
+                        .alert(isPresented: $showingAlert) {
+                                   Alert(title: Text("Login Failed"), message: Text("Username or Password is invalid."), dismissButton: .default(Text("Try again")))
+                        }*/
                     }
                 }
+            .padding(20)
             }
-        .padding(20)
         }
     }
     
