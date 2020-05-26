@@ -24,10 +24,21 @@ struct ContentView: View {
                 user()
                 CBITStudentLogin()
                 TextField("Username", text: $username)
+                    .padding(15)
+                    .keyboardType(.numberPad)
+                    .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color.white, lineWidth: 1))
+                    .font(.custom("RobotoCondensed-Regular", size: 18))
+                    .padding(.bottom,20)
+                    .foregroundColor(Color.white)
+                SecureField("Password", text: $password)
+                .padding(15)
+                .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color.white, lineWidth: 1))
+                .font(.custom("RobotoCondensed-Regular", size: 18))
                 .padding(.bottom,20)
-                .background(Color.white)
+                 
+                    
             }
-        .padding()
+        .padding(20)
         }
     }
     
