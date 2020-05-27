@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SVProgressHUD
 
 let gradStart=Color(red: 25.0/255, green: 170.0/255, blue: 179.0/255)
 let gradStop=Color(red: 35.0/255, green: 167.0/255, blue: 216.0/255)
@@ -17,6 +18,8 @@ struct ContentView: View {
     
     @State var username: String = ""
     @State var password: String = ""
+    
+    @State var selection: Int? = nil
     
     var body: some View {
         NavigationView{
@@ -29,24 +32,36 @@ struct ContentView: View {
                     VStack(){
                         usernameTextfield(username: $username)
                         passwordTextField(password: $password)
-                        NavigationLink(destination: WaitingView()) {
+                        /*NavigationLink(destination: WaitingView()) {
                             login()
-                        }
-                        /*Button(action: {
-                            if self.username=="" || self.password==""{
-                                self.showingAlert = false
-                            }
-                        }) {
-                            login()
-                        }
-                        .alert(isPresented: $showingAlert) {
-                                   Alert(title: Text("Login Failed"), message: Text("Username or Password is invalid."), dismissButton: .default(Text("Try again")))
                         }*/
+                        NavigationLink(destination: WaitingView(), tag: 1, selection: $selection) {
+                            Button(action: {
+                                print("login tapped")
+                                self.selection = 1
+                            }) {
+                                HStack {
+                                    Spacer()
+                                    Text("Login").padding(.vertical, 8)
+                                    .padding(.horizontal, 50)
+                                    .foregroundColor(.white)
+                                    .font(.custom("RobotoCondensed-Regular", size: 16))
+                                    .overlay(RoundedRectangle(cornerRadius: 40).stroke(Color.white, lineWidth: 1))
+                                    Spacer()
+                                }
+                            }
+                        }
                     }
                 }
             .padding(20)
+                
             }
+            //SVProgressHUD.setDefaultMaskType(.black)
         }
+        .navigationBarHidden(true)
+        .navigationBarTitle(Text("Home"))
+        .edgesIgnoringSafeArea([.top, .bottom])
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
 }
