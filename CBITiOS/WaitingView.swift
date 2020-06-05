@@ -10,6 +10,9 @@ import SwiftUI
 import WebKit
 import Combine
 
+var passwordExecuted=false
+var finisedLoading=false
+
 struct WaitingView: View{
 
     let gradStart=Color(red: 25.0/255, green: 170.0/255, blue: 179.0/255)
@@ -31,11 +34,12 @@ struct WaitingView: View{
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack {
-                  ActivityIndicator()
+                    ActivityIndicator().frame(width: 50, height: 50)
                     
             
                   }.foregroundColor(Color.white)
                 
+
                 SwiftUIWebView(viewModel: model)
                 if model.didFinishLoading {
                     //do your stuff
@@ -155,6 +159,8 @@ struct SwiftUIWebView: UIViewRepresentable {
              
              
              if(warning != "Password is Incorrect" && warning != "User Name is Incorrect"){ webView.evaluateJavaScript("document.getElementById('txtPassword').value='8055';document.getElementById('btnSubmit').click()")
+                passwordExecuted=true
+                print(passwordExecuted)
             }
              
              if(warning == "Password is Incorrect" || warning == "User Name is Incorrect"){
@@ -164,7 +170,6 @@ struct SwiftUIWebView: UIViewRepresentable {
                  webView.load(request)
                  warning=""
              }
-            
             self.viewModel.didFinishLoading = true
         }
     }
